@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>新山 2天1夜周末游 · 攻略（新加坡出发）</title>
+<meta name="description" content="新山 Johor Bahru 2天1夜周末游完整攻略：Day1 RUD卡丁车+JetSki+R&F日落+4DX电影+Mount Austin夜宵，Day2 Mid Valley逛街返程；含交互地图、分步玩法、预算、携带清单、预订待办。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22%230E7490%22 d=%22M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/leaflet.css">
+<style>
+:root{
+  --main:#0E7490; --bg:#F0F9FA; --card:#FFFFFF; --deep:#163B4A;
+  --sub:#5C7A85; --line:#D8E6EA; --accent:#E57554; --ok:#2E7D32;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC",sans-serif;background:var(--bg);color:var(--deep);line-height:1.7}
+.wrap{max-width:960px;margin:0 auto;padding:16px}
+header.hero{background:linear-gradient(135deg,#0E7490 0%,#0C5C70 100%);color:#fff;padding:80px 0 34px;margin-bottom:16px}
+header.hero h1{font-size:26px;margin-bottom:6px}
+header.hero .sub{opacity:.92;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:13px}
+.alert{background:#FFF7ED;border:1px solid #F5C99B;color:#8A4B12;padding:10px 14px;border-radius:10px;font-size:13.5px;margin-bottom:16px}
+.alert b{color:#B25E1B}
+h2.sec{font-size:26px;font-weight:900;color:var(--deep);margin:6px 0 6px;display:flex;align-items:center;gap:8px}
+h2.sec .tag{font-size:12px;background:var(--main);color:#fff;padding:2px 8px;border-radius:10px;font-weight:400}
+.sec-tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--main);margin-top:28px}
+.sec-desc{color:var(--sub);font-size:14px;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:14px}
+.card h3{font-size:16px;color:var(--deep);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.badge{font-size:12px;padding:2px 8px;border-radius:8px;font-weight:600;white-space:nowrap}
+.badge.A{background:#E53935;color:#fff}
+.badge.B{background:var(--accent);color:#fff}
+.badge.conf{background:var(--ok);color:#fff}
+.badge.el{background:#8E24AA;color:#fff}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0}
+th{background:#E0EFF0;color:var(--deep);text-align:left;padding:7px 9px;border:1px solid var(--line);font-weight:600}
+td{padding:7px 9px;border:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#F5FAFA}
+.navbtn{display:inline-flex;align-items:center;gap:6px;background:var(--main);color:#fff;border:none;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;margin-top:6px}
+.navbtn:hover{background:#0C5C70}
+details{margin:12px 0}
+details summary{cursor:pointer;font-size:13.5px;font-weight:700;color:#fff;background:var(--main);padding:10px 16px;border-radius:999px;list-style:none;outline:none;user-select:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 2px 6px rgba(14,116,144,.28);transition:transform .12s, box-shadow .12s}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"";width:0;height:0;border-left:6px solid #fff;border-top:4px solid transparent;border-bottom:4px solid transparent}
+details summary::after{content:"展开";font-size:12px;font-weight:500;opacity:.9;border:1px solid rgba(255,255,255,.55);padding:1px 9px;border-radius:999px}
+details summary:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(14,116,144,.4)}
+details[open] summary{background:var(--deep);margin-bottom:14px}
+details[open] summary::before{border-left:none;border-top:6px solid #fff;border-right:4px solid transparent;border-left:4px solid transparent}
+details[open] summary::after{content:"收起"}
+details .inner{padding:0}
+#map{width:100%;height:430px;border-radius:12px;border:1px solid var(--line);margin-bottom:0;z-index:1;background:#AAD3DF}
+.map-box{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:18px}
+.map-legend{background:#fff;padding:8px 12px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.22);font-size:12.5px;line-height:1.8;color:var(--deep)}
+.map-legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+.map-legend .dot.a{background:#E53935}
+.map-legend .dot.b{background:#E57554}
+.map-note{font-size:12.5px;color:var(--sub);margin:0 2px 12px}
+.leaflet-container,.leaflet-container *{font-family:inherit}
+ul{padding-left:20px;font-size:13.5px}
+li{margin:4px 0}
+.check{list-style:none;padding-left:0}
+.check li{padding:8px 10px;border:1px solid var(--line);border-radius:8px;margin:6px 0;background:var(--card);font-size:13.5px;display:flex;align-items:center;gap:8px}
+.check li input{width:17px;height:17px;accent-color:#0B6E7F;flex-shrink:0;cursor:pointer}
+.check li label{cursor:pointer;line-height:1.5;flex:1}
+.check li.done{opacity:.55}
+.check li.done label{text-decoration:line-through}
+.video{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.video a{display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;text-decoration:none;color:var(--deep);font-size:13px}
+.video a:hover{border-color:var(--main)}
+.video a small{display:block;color:var(--sub);font-size:11.5px;margin-top:3px}
+.navmodal{position:fixed;inset:0;background:rgba(22,59,74,.55);display:none;align-items:center;justify-content:center;z-index:1000}
+.navmodal .box{background:#fff;border-radius:14px;padding:18px;width:min(92vw,360px)}
+.navmodal h4{margin-bottom:10px;font-size:15px}
+.navmodal button{display:block;width:100%;margin:6px 0;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:14px;cursor:pointer;color:var(--deep)}
+.navmodal button:hover{border-color:var(--main);background:#EAF5F5}
+.navmodal .close{margin-top:8px;text-align:center;color:var(--sub);cursor:pointer;font-size:13px}
+footer{color:var(--sub);font-size:12px;text-align:center;margin:24px 0 30px}
+@media(max-width:760px){
+  .video{grid-template-columns:1fr}
+  .notes,.alt-grid{grid-template-columns:1fr}
+  .spot-head h3{min-width:0}
+  .tl{grid-template-columns:74px 18px 1fr}
+  header.hero h1{font-size:22px}
+  #map{height:340px}
+  .wrap{padding:10px}
+  table{font-size:12.5px}
+  nav.topnav .wrap{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  nav.topnav .wrap::-webkit-scrollbar{display:none}
+}
+
+/* ---- 增强：sticky nav ---- */
+nav.topnav{position:sticky;top:0;z-index:50;background:rgba(240,249,250,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin-bottom:16px}
+nav.topnav .wrap{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;padding:10px 16px}
+nav.topnav a{color:var(--deep);text-decoration:none;font-size:13px;font-weight:500;padding:4px 10px;border-radius:6px;white-space:nowrap;flex-shrink:0}
+nav.topnav a:hover{background:#E0F2F4;color:var(--main)}
+h2.sec{scroll-margin-top:64px}
+/* ---- 增强：hero 背景实景图 ---- */
+header.hero{position:relative;min-height:360px;display:block;background:linear-gradient(180deg,rgba(14,116,144,.28) 0%,rgba(22,59,74,.52) 100%),url('assets/images/hero.jpg') center/cover no-repeat;padding:88px 28px 38px;border-radius:0}
+header.hero h1{font-size:clamp(26px,4vw,40px);font-weight:900;letter-spacing:1px;text-shadow:0 2px 10px rgba(6,32,42,.5)}
+header.hero .sub{font-size:15px;text-shadow:0 1px 6px rgba(6,32,42,.45)}
+.chips{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(4px);padding:3px 12px;border-radius:999px;font-size:12.5px}
+/* ---- 增强：关键信息卡 ---- */
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.info-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.info-card .k{font-size:11.5px;color:var(--sub);font-weight:600}
+.info-card .v{font-size:13.5px;font-weight:700;margin-top:3px;color:var(--deep);line-height:1.5}
+.info-card .v small{font-weight:400;color:var(--sub);display:block;font-size:11.5px;margin-top:2px}
+/* ---- 增强：spot 卡片结构（对齐东山岛版） ---- */
+.spot{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 20px 16px;margin-bottom:20px;box-shadow:0 2px 10px rgba(30,60,80,.06)}
+.spot-head{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:4px}
+.spot h3{font-size:19px;font-weight:900;flex:1;min-width:220px;margin:0}
+.timechip{background:#E0EFF0;color:var(--deep);font-size:12.5px;font-weight:700;border-radius:999px;padding:3px 12px;white-space:nowrap}
+.spot .lead{color:var(--sub);font-size:13.5px;margin:8px 0 4px}
+.navline{background:#E0F2F4;border-radius:8px;padding:9px 12px;font-size:13px;margin:10px 0 14px;color:var(--deep);line-height:1.7}
+.navline b{color:var(--deep)}
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+.note{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:13px;line-height:1.6}
+.note b{color:var(--deep)}
+.note.orange{background:#FFF7ED;border-color:#F5C99B}
+.note.orange b{color:#B25E1B}
+.vidline{font-size:13px;color:var(--sub);margin-top:8px}
+.vidline a{color:var(--main);text-decoration:none}
+/* ---- 增强：时间轴（对齐东山岛版） ---- */
+.tl{display:grid;grid-template-columns:96px 22px 1fr;gap:0;margin:6px 0 30px}
+.tl .time{text-align:right;font-weight:700;font-size:13px;padding:10px 10px 10px 0;color:var(--deep)}
+.tl .axis{position:relative;display:flex;justify-content:center}
+.tl .axis::before{content:"";position:absolute;top:0;bottom:0;width:2px;background:var(--line)}
+.tl .axis .dot{position:relative;top:14px;width:12px;height:12px;border-radius:50%;background:var(--main);border:2.5px solid #fff;box-shadow:0 0 0 2px var(--main)}
+.tl .axis .dot.b{background:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.tl .axis .dot.conf{background:var(--ok);box-shadow:0 0 0 2px var(--ok)}
+.tl .body{padding:8px 0 8px 14px;border-bottom:1px dashed var(--line)}
+.tl .body b{font-size:14px;color:var(--deep)}
+.tl .body p{font-size:12px;color:var(--sub);margin-top:2px}
+/* ---- 增强：备选方案 2×2 卡片 ---- */
+.alt-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.alt{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;box-shadow:0 1px 6px rgba(30,60,80,.04)}
+.alt b{color:var(--deep)}
+.alt p{font-size:13px;color:var(--sub);margin-top:4px;line-height:1.6}
+/* ---- 增强：视频库白底分组（对齐东山岛版） ---- */
+.vid-list{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:12px}
+.vid-list b{font-size:14px;color:var(--deep)}
+.vid-list ul{margin:6px 0 0 18px}
+.vid-list li{font-size:13px;margin:4px 0}
+.vid-list a{color:var(--main);text-decoration:none;word-break:break-all}
+.verify{font-size:13px;color:var(--sub);margin-bottom:6px;line-height:1.7}
+/* ---- 增强：实景图 ---- */
+.spot-img{width:100%;border-radius:10px;margin:10px 0 4px;display:block;object-fit:cover;max-height:320px}
+.imgcap{font-size:12px;color:var(--sub);text-align:center;margin-bottom:10px}
+/* ---- 增强：B 档规则框 ---- */
+.rulebox{background:#FFF7ED;border:1px solid #F5C99B;border-radius:10px;padding:12px 14px;font-size:13px;margin:0 0 14px;color:#8A4B12;line-height:1.7}
+.rulebox b{color:#B25E1B}
+/* ---- 增强：信息核验 ---- */
+.verify{font-size:12.5px;color:var(--sub);line-height:1.8;margin:4px 0}
+</style>
+</head>
+<body>
+<nav class="topnav"><div class="wrap">
+<a href="#map-sec">点位地图</a><a href="#overview">行程速览</a><a href="#prepare">行前准备</a><a href="#day1">Day1 时间线</a><a href="#how">怎么玩</a><a href="#backup">备选方案</a><a href="#videos">视频库</a>
+</div></nav>
+<div class="wrap">
+<header class="hero">
+  <h1>新山 2天1夜周末游 · 攻略</h1>
+  <div class="sub">新加坡出发 · 10-17（周六）～10-18（周日）· 2 人 · 住一晚 · 去程 Tuas 二通道 / 返程 Woodlands</div>
+  <div class="chips">
+    <span class="chip">A 必去：RUD 卡丁车</span><span class="chip">A 必去：JetSki</span><span class="chip">A 必去：R&amp;F 日落</span><span class="chip">已确认：4DX 18:40</span><span class="chip">B 弹性：Mount Austin</span><span class="chip">B 弹性：Hutan 滑索</span>
+  </div>
+</header>
+
+<div class="alert"><b>时效提示</b>：出行前请再核验天气／烟霾（PSI）、4DX 场次在售、RUD 营业与 Tuas 拥堵。中马护照互免签至 2026-12-31，抵马前 3 天填 MDAC。汇率参考 1 SGD≈3.19 MYR。（信息核验：2026-10-14）</div>
+<div class="info-grid">
+<div class="info-card"><div class="k">出发</div><div class="v">Tuas Link MRT（绿线终点）<small>新加坡西部出发 · 步行接跨境巴士</small></div></div>
+<div class="info-card"><div class="k">跨境交通</div><div class="v">CW7 → 转 CW7L<small>Tuas Link 上 CW7 → 关口转 CW7L 到 Anjung Medini · 全程约 1h</small></div></div>
+<div class="info-card"><div class="k">通关</div><div class="v">去程 Tuas · 返程 Woodlands<small>Tuas 06:00–00:00；Woodlands 24h 口岸</small></div></div>
+<div class="info-card"><div class="k">日落锚点</div><div class="v">R&amp;F 16:30–17:45<small>17:45 前离开，18:05 到 Mid Valley 取票</small></div></div>
+<div class="info-card"><div class="k">4DX 场次</div><div class="v">周六 18:40 Street Fighter<small>限时特映（10-17 最后一场）· 1h59m</small></div></div>
+<div class="info-card"><div class="k">预算（2 人）</div><div class="v">约 RM1000–1700<small>含 10–15% 机动额度 · 估算</small></div></div>
+</div>
+<span class="sec-tag">MAP</span>
+<h2 class="sec" id="map-sec">行程点位地图</h2>
+<p class="sec-desc">只标注行程内的点位：<b style="color:#E53935">红＝已确认必去</b>，<b style="color:#E57554">橙＝时间足够才去</b>；点击标记看时间带与亮点。</p>
+<div class="map-box">
+  <div id="map"></div>
+</div>
+<p class="map-note">底图默认离线瓦片（随文件本地存储，断网也能显示），右上角「底图」可切换高德 / Esri 在线。点击标记可查看地点名称、时间带与亮点。导航：各点导航目的地见下方逐点「导航」行。</p>
+
+<span class="sec-tag">OVERVIEW</span>
+<h2 class="sec" id="overview">行程速览</h2>
+<p class="sec-desc">10-17 周六出发、住一晚、10-18 周日返程。Day1 刺激娱乐为主线（硬锚点：18:40 4DX），Day2 轻装逛街返程。</p>
+<div class="card"><table>
+<tr><th>日期</th><th>主题</th><th>核心内容</th><th>住宿</th></tr>
+<tr><td>10-17 周六</td><td>刺激娱乐＋新奇体验</td><td>RUD 卡丁车 → JetSki → R&amp;F 日落 → GSC 4DX → 晚间弹性 Mount Austin</td><td>Mid Valley／KSL 区</td></tr>
+<tr><td>10-18 周日</td><td>轻装返程</td><td>自然醒 → 退房 → Mid Valley 逛街午餐 → 14:30 返程避峰</td><td>—</td></tr>
+</table></div>
+
+<span class="sec-tag">PREPARE</span>
+<h2 class="sec" id="prepare">行前准备（出发前 1 天核验）</h2>
+<p class="sec-desc">对照打勾：携带清单、过关与跨境交通、预算分项、预订待办。</p>
+<div class="spot">
+<div class="spot-head"><h3>出发前携带清单</h3><span class="timechip">出发前 1 天核对</span></div>
+<details><summary>展开携带清单（5 类 18+ 项）</summary>
+<table>
+<tr><th>类别</th><th>物品</th><th>备注</th></tr>
+<tr><td>证件</td><td>护照（有效期 6 个月以上）、MDAC（打印或截图）、酒店预订确认</td><td>抵马前 3 天填 MDAC</td></tr>
+<tr><td>支付</td><td>马币现金（RM250–300）、DBS 卡（信用卡＋借记卡）、Grab 绑卡</td><td>小摊／夜市／滑索现金备用</td></tr>
+<tr><td>电子</td><td>充电宝、充电线、马来西亚 eSIM 或漫游、离线地图</td><td>本页可离线保存</td></tr>
+<tr><td>衣物</td><td>运动鞋（卡丁车）、换洗衣物、防晒、雨具</td><td>JetSki 会湿身；10 月阵雨多</td></tr>
+<tr><td>其他</td><td>防水袋（JetSki）、晕车药、创可贴、塑料袋装湿衣</td><td>按需</td></tr>
+</table>
+</details>
+</div>
+<div class="spot">
+<div class="spot-head"><h3>过关、跨境交通与支付</h3><span class="timechip">去程 Tuas · 返程 Woodlands</span></div>
+<details open><summary>过关交通与支付详情</summary>
+<ul style="font-size:13.5px;line-height:1.8">
+<li style="margin:5px 0"><b>去程（Tuas 二通道）：</b>Tuas Link MRT 绿线终点站 → <b>CW7</b>（该站唯一跨境巴士，步行约 2min 到对面站牌 25421；关口不可步行，必须坐巴士）→ Tuas Checkpoint 下车出境 → 同车过桥到 <b>Sultan Abu Bakar CIQ（2nd-Link 关口）</b>下车入境 → 出关转 <b>CW7L</b>（出示 CW7 车票／刷同一卡）→ <b>Mydin Anjung（Anjung Medini）</b>下车步行约 10min 到 RUD。<b>全程约 1h、CW 巴士 2026-10 起全线无现金</b>（刷银行卡／SimplyGo／ezlink，深夜清早 ezlink 可能不可用，备银行卡兜底）；CW7 每日 05:00–22:15、约 15min 一班；CW7L 从 CIQ 出发高峰约 30min 一班（首班 5:30、末班 22:30），衔接顺畅。</li>
+</ul>
+<table style="margin:10px 0 4px"><tr><th style="width:9%">步骤</th><th style="width:62%">做什么</th><th style="width:29%">参考时长</th></tr>
+<tr><td>1</td><td><b>Tuas Link MRT 出站</b>，对面站牌 25421 等 CW7（关口不可步行，必须坐巴士）</td><td>步行约 2min</td></tr>
+<tr><td>2</td><td>上 <b>CW7</b> 刷卡（无现金），坐到 <b>Tuas Checkpoint</b>——全部下车、带齐行李</td><td>10–15min</td></tr>
+<tr><td>3</td><td><b>新加坡出境</b>：红色自助通道（可 group 一起过）；过关后凭原票／同一张卡重新上车，<b>可上任意 CW</b>（CW3/4/6/7 两口间互通免费）</td><td>5–10min</td></tr>
+<tr><td>4</td><td>坐 CW 过二通道桥，到 <b>Sultan Abu Bakar CIQ</b>（2nd-Link 关口）全部下车</td><td>5–10min</td></tr>
+<tr><td>5</td><td><b>马来西亚入境</b>：中国护照走 e-gate 自助闸机（护照竖放），失败走人工递护照＋MDAC</td><td>5–10min</td></tr>
+<tr><td>6</td><td>出关转 <b>CW7L</b>（出示 CW7 车票／刷同一卡），到 <b>Mydin Anjung＝Anjung Medini</b></td><td>15–25min</td></tr>
+<tr><td>7</td><td>步行到 <b>RUD Karting Medini</b>（或 Grab 5min）</td><td>约 10min</td></tr>
+</table>
+<ul style="font-size:13.5px;line-height:1.8">
+<li style="margin:5px 0"><b>返程（Woodlands 口岸）：</b>Mid Valley 出发 Grab 跨境 RM40–60（15–20min）或 JB Sentral 乘 KTM（S$5／5min）；Woodlands 24h 开放，周日避开 17:00–21:00 高峰。</li>
+<li style="margin:5px 0"><b>证件与过关：</b>中马护照互免签至 2026-12-31；MDAC 抵马前 3 天填（imigresen-online.imi.gov.my，交通填巴士车牌、住宿填酒店地址，提交后截图保存）；中国护照走马来西亚自助闸机（e-gate 刷护照＋人脸识别），护照按要求方向放（部分闸机竖放），失败走人工递护照＋MDAC；新加坡侧红色自助通道可 group 一起过；<b>过关全程禁止录像</b>。</li>
+<li style="margin:5px 0"><b>货币与换汇：</b>汇率参考 1 SGD≈3.19 MYR；建议换 <b>RM250–300（约 S$80–95）</b>——新加坡换好，或过关后 City Square 一楼换汇点补；<b>别在新山 ATM 取现</b>（每笔 S$7 服务费＋转换费不划算）。</li>
+<li style="margin:5px 0"><b>支付：</b>DBS Visa／Mastercard（信用卡／借记卡）在新山商场、餐厅、GSC、Grab 通用；境外刷卡手续费最高 3.25%——大额（RUD、4DX、酒店、购物）刷卡，小额现金。</li>
+<li style="margin:5px 0"><b>现金刚需：</b>Hutan 滑索 RM90（2 人，去的话）＋夜市／宵夜 RM120–150＋零花与打车兜底 RM50–80。</li>
+<li style="margin:5px 0"><b>DBS 出发前：</b>digibank 里启用境外磁条使用并设每日限额，避免到那边刷不了或被盗刷。</li>
+<li style="margin:5px 0"><b>提醒：</b>各点营业时间出发前再现场核实一次（网上攻略可能过时）；返程如需申报新加坡入境（SG Arrival Card，按个人身份确认）。</li>
+</ul>
+</details>
+</div>
+<div class="spot">
+<div class="spot-head"><h3>预算分项估算（2 人）</h3><span class="timechip">约 RM1000–1700</span></div>
+<details><summary>查看预算明细</summary>
+<table>
+<tr><th>项目</th><th>明细</th><th>估算（RM）</th><th>说明</th></tr>
+<tr><td>交通</td><td>去程 MRT＋CW7 转 CW7L；当地 Grab 3–4 程；返程 Grab／KTM</td><td>120–200</td><td>估算</td></tr>
+<tr><td>住宿</td><td>KSL／St. Giles／Opero 一晚</td><td>200–470</td><td>按所选酒店</td></tr>
+<tr><td>门票</td><td>RUD Stage 2×2＝158；JetSki 约 250/人 起</td><td>460–660</td><td>JetSki 以预订页为准</td></tr>
+<tr><td>4DX</td><td>2 张</td><td>56–85</td><td>RM28–42.5/人</td></tr>
+<tr><td>餐饮</td><td>早／午／晚（宵夜）</td><td>150–300</td><td>估算</td></tr>
+<tr><td>机动</td><td>购物＋杂项</td><td>10–15%</td><td>按需</td></tr>
+</table>
+</details>
+</div>
+<div class="spot">
+<div class="spot-head"><h3>预订待办（行前打勾）</h3><span class="timechip">出发前完成</span></div>
+<details open><summary>预订待办清单（12 项）</summary>
+<ul class="check" id="checklist">
+<li><input type="checkbox" id="ck0"><label for="ck0">RUD 预约 10:00 场（RUD Super App，两人 Stage 2×2＝RM158）</label></li>
+<li><input type="checkbox" id="ck1"><label for="ck1">JetSki 订票（Klook／GetYourGuide）＋ WhatsApp 约 15:30 场（订不到按 16:00）</label></li>
+<li><input type="checkbox" id="ck2"><label for="ck2">4DX 订票（GSC App／官网或 WeTix）周六 18:40 Street Fighter 场</label></li>
+<li><input type="checkbox" id="ck3"><label for="ck3">酒店预订（Mid Valley／KSL 区，免费取消优先）</label></li>
+<li><input type="checkbox" id="ck4"><label for="ck4">MDAC 电子入境卡（抵马前 3 天填）</label></li>
+<li><input type="checkbox" id="ck5"><label for="ck5">Hutan Bandar 滑索预约（若走分支 A：12:30 检查点前电话／在线约 14:00 场，RM30/人）</label></li>
+<li><input type="checkbox" id="ck6"><label for="ck6">DBS 卡 digibank 启用境外磁条使用＋设每日限额（行前 1 天）</label></li>
+<li><input type="checkbox" id="ck7"><label for="ck7">换汇 RM250–300（约 S$80–95，新加坡换好）</label></li>
+<li><input type="checkbox" id="ck8"><label for="ck8">手机套餐确认含马来西亚流量／开漫游（提前问运营商）</label></li>
+<li><input type="checkbox" id="ck9"><label for="ck9">Grab 账号绑定国际卡（新加坡号可注册，到新山直接可用）</label></li>
+<li><input type="checkbox" id="ck10"><label for="ck10">10-16 晚查天气／烟霾（PSI）＋Tuas 拥堵（决定滑索／观景是否调整）</label></li>
+<li><input type="checkbox" id="ck11"><label for="ck11">返程 KTM 票（若选 KTM 返程：Shuttle Tebrau 提前购票，现场常售罄）</label></li>
+</ul>
+</details>
+</div>
+
+<span class="sec-tag">TIMELINE</span>
+<h2 class="sec" id="day1">Day1（10-17 周六）时间线 <span class="tag">A/B 分支</span></h2>
+<p class="sec-desc">倒推自 18:40 电影硬锚点；07:00 分头出发、08:00 Tuas Link 汇合，12:30 设弹性触发检查点——状态好走分支 A（加 Hutan 滑索 14:00 场），否则走分支 B（从容午餐直奔 Senibong）。</p>
+<div class="card">
+<p style="font-size:13px;color:var(--sub);margin-bottom:6px">倒推逻辑：18:40 电影为硬锚点 → 18:05 到 Mid Valley 取票；R&amp;F 日落 16:30–17:45 且 17:45 前离开；JetSki 16:00 出发；上午 07:00 分头出发、08:00 Tuas Link 汇合。圆点：<b style="color:#E53935">红＝A 档必去</b> · <b style="color:#E57554">橙＝B 档弹性</b> · <b style="color:#2E7D32">绿＝已确认</b>。</p>
+<div class="tl">
+<div class="time">07:00</div><div class="axis"><span class="dot"></span></div><div class="body"><b>朋友从芽笼出发</b><p>绿线 Aljunied／Kallang → Tuas Link MRT 直达 · 约 50min</p></div>
+<div class="time">07:30</div><div class="axis"><span class="dot"></span></div><div class="body"><b>你从西部出发</b><p>地铁到 Tuas Link MRT · 20–30min</p></div>
+<div class="time">08:00</div><div class="axis"><span class="dot"></span></div><div class="body"><b>Tuas Link MRT 汇合</b><p>上 CW7（05:00–22:15 · 约 15min 一班，基本随到随上）</p></div>
+<div class="time">08:30–09:15</div><div class="axis"><span class="dot"></span></div><div class="body"><b>过关＋转车到 Medini</b><p>CW7 到 Tuas Checkpoint 下车出境 → 同车到 2nd-Link CIQ 入境 → 转 CW7L 到 Anjung Medini</p></div>
+<div class="time">09:15–09:35</div><div class="axis"><span class="dot"></span></div><div class="body"><b>Anjung Medini → RUD</b><p>Mydin Anjung 下车步行约 10min（或 Grab 5min）· 10:00 场充裕</p></div>
+<div class="time">09:30–11:30</div><div class="axis"><span class="dot"></span></div><div class="body"><b>A1 RUD 卡丁车</b><p>预约 10:00 场 · 两人各 1 场 Stage 2（RM79/场）· 含报到／简报／等位缓冲</p></div>
+<div class="time">11:30–12:30</div><div class="axis"><span class="dot"></span></div><div class="body"><b>午餐（Mall of Medini）</b><p>与卡丁车同一区域 · 合并时段</p></div>
+<div class="time">12:30</div><div class="axis"><span class="dot"></span></div><div class="body"><b>弹性触发检查点</b><p>RUD＋午餐提前完成且顺畅 → 分支 A（去 Hutan 滑索）；任一延误 → 分支 B（直奔 Senibong）</p></div>
+<div class="time">分支 A<br>12:30–15:00</div><div class="axis"><span class="dot b"></span></div><div class="body"><b>B Hutan Bandar 滑索</b><p>12:30 出发 → 13:00 到公园逛 → 14:00–15:00 滑索＋绳索（RM30＋RM15）→ 15:00 前离场去 Senibong</p></div>
+<div class="time">分支 B<br>12:30–15:00</div><div class="axis"><span class="dot"></span></div><div class="body"><b>从容午餐＋休整</b><p>15:00 出发去 Senibong · 15:20 报到休息（约 2h45min 缓冲），不赶场</p></div>
+<div class="time">15:00–15:20</div><div class="axis"><span class="dot"></span></div><div class="body"><b>→ Senibong Cove</b><p>Grab 15–20min（分支 A 用）</p></div>
+<div class="time">15:20–16:00</div><div class="axis"><span class="dot"></span></div><div class="body"><b>Senibong 报到·换装·讲解</b><p>缓冲；JetSki 预约优先问 15:30 场</p></div>
+<div class="time">16:00–16:30</div><div class="axis"><span class="dot"></span></div><div class="body"><b>A2 Sea-Doo JetSki</b><p>优先 15:30 场（兜底 16:00）· 横渡柔佛海峡至 R&amp;F · 附照片视频</p></div>
+<div class="time">16:30–17:45</div><div class="axis"><span class="dot"></span></div><div class="body"><b>A3 R&amp;F 国际城＋日落</b><p>步行街／长堤火车／日落机位 · 17:45 前必须离场</p></div>
+<div class="time">17:45–18:05</div><div class="axis"><span class="dot"></span></div><div class="body"><b>R&amp;F → Mid Valley</b><p>Grab 15–25min</p></div>
+<div class="time">18:05–18:40</div><div class="axis"><span class="dot"></span></div><div class="body"><b>取票＋找影厅（顶层 AT-3）</b><p>缓冲；4DX 票建议提前订（限时特映易满场）</p></div>
+<div class="time">18:40–20:40</div><div class="axis"><span class="dot conf"></span></div><div class="body"><b>已确认 GSC 4DX · Street Fighter</b><p>1h59m · 限时特映（10-17 最后一场）· RM28–42.5</p></div>
+<div class="time">20:40–21:00</div><div class="axis"><span class="dot b"></span></div><div class="body"><b>散场 · 决定是否去 Mount Austin</b><p>精力够才去（弹性）</p></div>
+<div class="time">21:00–21:30</div><div class="axis"><span class="dot b"></span></div><div class="body"><b>→ Mount Austin</b><p>Grab 25–30min</p></div>
+<div class="time">21:30–23:00</div><div class="axis"><span class="dot b"></span></div><div class="body"><b>B Mount Austin 宵夜</b><p>Wei Ge Lok Lok（至 04:00）／大郎烧烤（至 03:00）／YOLO（周六至 04:00）· 弹性</p></div>
+<div class="time">23:00–23:30</div><div class="axis"><span class="dot"></span></div><div class="body"><b>→ 酒店</b><p>Mid Valley／KSL 区 · 20–30min</p></div>
+<div class="time">23:30</div><div class="axis"><span class="dot"></span></div><div class="body"><b>入住休息</b><p>—</p></div>
+</div>
+</div>
+
+<span class="sec-tag">ITINERARY</span>
+<h2 class="sec" id="how">Day1 各点怎么玩</h2>
+<p class="sec-desc">每站含导航、分步玩法（步骤/做什么/参考时长）、避坑与实景参考；A 档必去主线，B 档只在触发条件满足时插入（规则见下方）。</p>
+
+<div class="spot">
+<div class="spot-head"><span class="badge A">A1</span><h3>RUD 卡丁车（Medini）</h3><span class="timechip">09:30–11:30 · 约 2h（含报到）</span></div>
+<p class="lead">新山最大户外卡丁车场，774m／16 弯赛道，油车动力直接、性价比高（RM79/场），营业到凌晨 1 点。</p>
+<details open><summary>导航 / 分步玩法 / 避坑 / 视频</summary>
+<div class="navline"><b>导航：</b>「RUD Karting Medini」——PTD 200284, Persiaran Medini Sentral 6, Bandar Medini Iskandar；从 Anjung Medini 巴士站步行约 10 分钟。<button class="navbtn" data-nav="RUD Karting Medini">一键导航</button></div>
+<table><tr><th>步骤</th><th>做什么</th><th>参考时长</th></tr>
+<tr><td>1</td><td>RUD Super App 提前约 10:00 场并付款（Stage 2：RM79/10min）</td><td>出发前</td></tr>
+<tr><td>2</td><td>到店报到：出示凭证、选头盔、听安全简报（含旗语）</td><td>20min</td></tr>
+<tr><td>3</td><td>下场跑 10min（户外 774m／16 弯），结束看成绩单</td><td>10min/场</td></tr>
+</table>
+<img class="spot-img" src="assets/images/rud.jpg" alt="RUD Karting Medini 户外卡丁车赛道" loading="lazy">
+<p class="imgcap">RUD Karting Medini 户外赛道（774m／16 弯 · 营业至凌晨 1 点）</p>
+<div class="notes">
+<div class="note"><b>加分项：</b>周六 10:00 首场最空，基本不用排队；跑完看成绩单对比两人圈速；Stage 2 可多人同场竞技</div>
+<div class="note orange"><b>避坑：</b>穿运动鞋（禁拖鞋）；长发扎起；随身物可寄存；户外赛道雨天可能停开（见备选方案）</div>
+</div>
+<p class="vidline">实景参考：<a href="https://www.iesdouyin.com/share/video/7676101409125649777">抖音·EVOLT vs RUD 对比实测</a> · <a href="https://www.iesdouyin.com/share/video/7628939691446127333">抖音·RUD 第一人称一镜到底</a> · <a href="https://www.iesdouyin.com/share/video/7566698353226471046">抖音·00 后体验 RUD Medini</a></p>
+</details>
+</div>
+
+<div class="spot">
+<div class="spot-head"><span class="badge A">A2</span><h3>Sea-Doo JetSki（Senibong Cove）</h3><span class="timechip">16:00–16:30 · 约 2h（含报到）</span></div>
+<p class="lead">Senibong Cove 码头出发的 Sea-Doo Safari，两人一艇沿柔佛海峡驶向 R&amp;F，中途可停船拍照——全程约 45 分钟。</p>
+<details open><summary>导航 / 分步玩法 / 避坑 / 视频</summary>
+<div class="navline"><b>导航：</b>「Senibong Cove Marina」码头报到；营业 10:00–19:00、周一闭馆。分支 B 时 15:00 前到可提前休息。<button class="navbtn" data-nav="Senibong Cove Marina">一键导航</button></div>
+<table><tr><th>步骤</th><th>做什么</th><th>参考时长</th></tr>
+<tr><td>1</td><td>Klook／GetYourGuide 订 Sea-Doo Safari（Senibong Cove Marina），订后 WhatsApp voucher 上的运营商号码约时段</td><td>出发前</td></tr>
+<tr><td>2</td><td>到码头报到：签免责、穿救生衣、听操作讲解（新手可玩）</td><td>20min</td></tr>
+<tr><td>3</td><td>两人一艇（可换着开）沿柔佛海峡驶向 R&amp;F，中途停留拍照</td><td>45min</td></tr>
+<tr><td>4</td><td>到 R&amp;F 上岸，行程结束</td><td>—</td></tr>
+</table>
+<img class="spot-img" src="assets/images/jetski.jpg" alt="Sea-Doo 摩托艇体验（Senibong Cove 出发）" loading="lazy">
+<p class="imgcap">Sea-Doo 摩托艇从 Senibong Cove 出发，沿柔佛海峡驶向 R&amp;F</p>
+<div class="notes">
+<div class="note"><b>加分项：</b>两人一艇可换着开，中途停船拍照；部分配套含餐／拍摄（参考视频库）；会湿身但海上风感很爽</div>
+<div class="note orange"><b>避坑：</b>当天不可取消／退款／改期（改期提前 24h）；雷暴才可因天气退款（小雨照常）；带防水袋、备换洗衣物；参考价约 RM250/人 起</div>
+</div>
+<p class="vidline">实景参考：<a href="https://www.iesdouyin.com/share/video/7230795505461185792">抖音·JetSki 一人 RM250 含岛上野餐</a> · <a href="https://www.iesdouyin.com/share/video/7465680493309168950">抖音·Senibong 水上摩托 32km＋海鲜餐</a> · <a href="https://www.iesdouyin.com/share/video/7651565980166759759">抖音·JetSki 海上自驾推荐</a></p>
+</details>
+</div>
+
+<div class="spot">
+<div class="spot-head"><span class="badge A">A3</span><h3>R&amp;F 国际城日落</h3><span class="timechip">16:30–17:45 · 约 1h15min</span></div>
+<p class="lead">JetSki 终点上岸就是 R&amp;F Princess Cove——海滨步道正对新加坡天际线，是本次最出片的日落机位。</p>
+<details><summary>导航 / 分步玩法 / 避坑 / 视频</summary>
+<div class="navline"><b>导航：</b>「R&amp;F Princess Cove」；从 Senibong 骑 JetSki 到 R&amp;F 约 45 分钟，也可叫 Grab。<button class="navbtn" data-nav="R&F Princess Cove">一键导航</button></div>
+<table><tr><th>步骤</th><th>做什么</th><th>参考时长</th></tr>
+<tr><td>1</td><td>JetSki 终点上岸，沿海滨步道散步</td><td>20min</td></tr>
+<tr><td>2</td><td>找日落机位：对岸新加坡天际线方向拍照（烟霾天效果打折）</td><td>20min</td></tr>
+<tr><td>3</td><td>17:45 前叫 Grab 前往 Mid Valley</td><td>—</td></tr>
+</table>
+<img class="spot-img" src="assets/images/rf.jpg" alt="R&amp;F Princess Cove 滨水天际线" loading="lazy">
+<p class="imgcap">R&amp;F Princess Cove 滨水天际线（日落机位朝对岸新加坡，烟霾天效果打折）</p>
+<div class="notes">
+<div class="note"><b>加分项：</b>日落前 5 分钟到位，低角度蹲拍对岸天际线更完整；时间富余可沿海滨步道走到观景平台</div>
+<div class="note orange"><b>避坑：</b>烟霾天能见度差时日落效果打折（PSI 高可提前改室内）；<b>17:45 必须离场</b>，否则赶不上 18:20 到 GSC</div>
+</div>
+<p class="vidline">实景参考：<a href="https://www.iesdouyin.com/share/video/7578494052263758754">抖音·在新山看新加坡日落</a> · <a href="https://www.iesdouyin.com/share/video/7437444241040624950">抖音·柔佛滨海黄昏打卡（Puteri Harbour）</a></p>
+</details>
+</div>
+
+<div class="spot">
+<div class="spot-head"><span class="badge conf">已确认</span><h3>GSC 4DX · Street Fighter</h3><span class="timechip">18:40–20:40 · 约 2.5h</span></div>
+<p class="lead">Mid Valley 顶层 GSC 的 4DX 动感影厅——座椅震动＋风／雾／灯光特效，限时特映 Street Fighter，10-17 是最后一场。</p>
+<details open><summary>导航 / 分步玩法 / 避坑 / 视频</summary>
+<div class="navline"><b>导航：</b>「GSC The Mall Mid Valley Southkey」（商场顶层）；R&amp;F → Mid Valley 约 25 分钟车程，商场有 4 个入口。<button class="navbtn" data-nav="GSC The Mall Mid Valley Southkey">一键导航</button></div>
+<table><tr><th>步骤</th><th>做什么</th><th>参考时长</th></tr>
+<tr><td>1</td><td>GSC App／官网或 WeTix（wetix.my）订周六 18:40 场</td><td>出发前</td></tr>
+<tr><td>2</td><td>到 Mid Valley 顶层 GSC 取票／扫码入场，提前 15min 到</td><td>—</td></tr>
+<tr><td>3</td><td>看 4DX 场（动感座椅＋风／雾／震动特效）</td><td>1h59m</td></tr>
+</table>
+<img class="spot-img" src="assets/images/4dx.jpg" alt="4DX 动感影厅" loading="lazy">
+<p class="imgcap">4DX 动感影厅：座椅震动＋风／雾／灯光特效（Mid Valley 顶层 GSC）</p>
+<div class="notes">
+<div class="note"><b>加分项：</b>提前 15 分钟到取票选座；观影后可顺路逛 Mid Valley 一层夜市档口（22:00 前）</div>
+<div class="note orange"><b>避坑：</b>限时特映仅 10-14／10-17 两日、10-17 最后一场，易满场尽早订；票价 RM28–42.5；4DX 座椅晃动＋喷风，易晕动者慎选</div>
+</div>
+<p class="vidline">实景参考：<a href="https://www.iesdouyin.com/share/video/7130538139067731241">抖音·4D 观影晕动实测（避坑向）</a> · <a href="https://www.iesdouyin.com/share/video/7687851178012884147">抖音·4DX 影厅体验（喷水/座椅）</a> · <a href="https://www.iesdouyin.com/share/video/7658718169074240768">抖音·4DX Max 影院人气实测</a></p>
+</details>
+</div>
+
+<div class="spot">
+<div class="spot-head"><span class="badge B">B</span><h3>Mount Austin 夜宵</h3><span class="timechip">触发：看完 4DX 精力够时</span></div>
+<p class="lead">新山最热闹的夜宵街区，lok lok 串串＋烧烤一条街，营业到深夜——是 Day1 晚间弹性加项。</p>
+<details><summary>导航 / 分步玩法 / 避坑 / 视频</summary>
+<div class="navline"><b>导航：</b>「Wei Ge Lok Lok Mount Austin」；4DX 散场后 Grab 约 30 分钟车程；宵夜后回 Mid Valley／KSL 酒店区 20–25 分钟。<button class="navbtn" data-nav="Wei Ge Lok Lok Mount Austin">一键导航</button></div>
+<table><tr><th>步骤</th><th>做什么</th><th>参考时长</th></tr>
+<tr><td>1</td><td>看完 4DX（20:40）评估精力：状态好才去</td><td>—</td></tr>
+<tr><td>2</td><td>Grab 到 Mount Austin：Wei Ge Lok Lok（200+ 串串＋烤猪肉＋冰啤）或大郎烧烤（16:30–03:00）</td><td>30min 车程</td></tr>
+<tr><td>3</td><td>宵夜后回酒店（20–25min）</td><td>1–1.5h</td></tr>
+</table>
+<img class="spot-img" src="assets/images/mountaustin.jpg" alt="Mount Austin 宵夜串烧" loading="lazy">
+<p class="imgcap">Mount Austin 宵夜街区（lok lok 串烧 · 20:00–04:00）</p>
+<div class="notes">
+<div class="note"><b>加分项：</b>周六 21:00 起 YOLO Live House 有现场演出；串串 1 支 RM0.7–1 起，明码标价</div>
+<div class="note orange"><b>避坑：</b>周末深夜街区人多车多，保管好随身物品；叫车返程深夜加价，预留 20 分钟等车；别贪吃太晚影响 Day2</div>
+</div>
+<p class="vidline">实景参考：<a href="https://www.iesdouyin.com/share/video/7377729825743686964">抖音·Mount Austin 最火 loklok</a> · <a href="https://www.iesdouyin.com/share/video/7525654030438190374">抖音·新山 7 点满桌碌碌实测</a> · <a href="https://www.iesdouyin.com/share/video/7692746344101209960">抖音·串哥哥·新山 loklok 文化</a></p>
+</details>
+</div>
+
+<div class="spot">
+<div class="spot-head"><span class="badge B">B</span><h3>Hutan Bandar 滑索</h3><span class="timechip">触发：12:30 检查点 RUD 收工＋状态好</span></div>
+<p class="lead">市立公园里的丛林滑索（flying fox），非大马成人 RM30／绳索另计 RM15，周六日两场开放——Day1 分支 A 的弹性加项。</p>
+<details><summary>导航 / 分步玩法 / 避坑 / 视频</summary>
+<div class="navline"><b>导航：</b>「Hutan Bandar MBJB」——Jalan Tasek Utara, Kolam Ayer（距 KSL 约 1.9km）。<b>衔接位置：</b>Day1 12:30 检查点 → 12:30 出发 → 13:00 到公园 → 14:00–15:00 滑索 → 15:00 前离场去 Senibong。<button class="navbtn" data-nav="Hutan Bandar MBJB">一键导航</button></div>
+<table><tr><th>步骤</th><th>做什么</th><th>参考时长</th></tr>
+<tr><td>1</td><td>公园免费入场，找到滑索（flying fox）报名点，非大马成人 RM30／绳索另计 RM15</td><td>10min</td></tr>
+<tr><td>2</td><td>签免责、戴安全装备，听操作员讲解</td><td>10min</td></tr>
+<tr><td>3</td><td>滑索穿越（多条线路可玩），结束后在园区步道散步</td><td>40–60min</td></tr>
+</table>
+<img class="spot-img" src="assets/images/zipline.jpg" alt="丛林滑索体验" loading="lazy">
+<p class="imgcap">丛林滑索体验（Hutan Bandar 仅周六日 10:00–13:00／14:00–17:00 两场）</p>
+<div class="notes">
+<div class="note"><b>加分项：</b>公园免费入场，多条滑索线路可玩；上午场人少、光线好；距 KSL 近，住 KSL 顺路</div>
+<div class="note orange"><b>避坑：</b>滑索 RM30／绳索 RM15 为单源信息待核验（以现场为准）；仅周六日两场；穿运动鞋、长裤，随身物寄存；雨后地面湿滑慎玩</div>
+</div>
+<p class="vidline">实景参考：<a href="https://www.iesdouyin.com/share/video/7630745195626541129">抖音·Hutan Bandar 滑索体验</a></p>
+</details>
+</div>
+
+<span class="sec-tag">DAY 2</span>
+<h2 class="sec" id="day2">Day2（10-18 周日）轻装返程</h2>
+<p class="sec-desc">自然醒 → Mid Valley 逛街午餐 → 14:30 返程避峰；弹性：想补滑索可 09:00 先到 Hutan Bandar。</p>
+<div class="spot">
+<div class="spot-head"><span class="badge conf">已确认</span><h3>Mid Valley 逛街午餐</h3><span class="timechip">10:30–14:00 · 弹性</span></div>
+<p class="lead">南马最大购物中心之一，6 层 260+ 家店，G 层美妆／1 层服饰／2 层快时尚／3 楼美食广场——返程前的最后一站。</p>
+<table>
+<tr><th>时间</th><th>做什么</th><th>备注</th></tr>
+<tr><td>08:00–09:30</td><td>自然醒＋早餐</td><td>酒店自助约 RM65/人 或周边咖啡店 RM15–30</td></tr>
+<tr><td>09:30–10:30</td><td>收拾＋退房（KSL 12:00 前退），行李寄存前台</td><td>KSL／St. Giles 均可寄存</td></tr>
+<tr><td>10:30–12:30</td><td>Mid Valley 逛街 Part 1</td><td>G 层 Sogo 美妆 → 1 层服饰／手袋＋大牌</td></tr>
+<tr><td>12:30–13:30</td><td>午餐</td><td>3 楼美食广场（RM15–25）或 1 楼餐厅（RM40–70）</td></tr>
+<tr><td>13:30–14:15</td><td>逛街 Part 2</td><td>2 层快时尚＋霸王茶姬／KOI 饮品</td></tr>
+<tr><td>14:15–14:30</td><td>取行李，商场门口集合</td><td>—</td></tr>
+<tr><td>14:30</td><td>出发返程：Grab 到 Woodlands 口岸（跨境 RM40–60，15–20min）或 JB Sentral 乘 KTM（S$5／5min）</td><td>避周日 17:00–21:00 高峰</td></tr>
+<tr><td>15:00–16:00</td><td>过关回新加坡</td><td>—</td></tr>
+</table>
+<div class="notes">
+<div class="note"><b>逛法：</b>G 层 Sogo 美妆 → 1 层服饰＋Coach／MK → 2 层快时尚＋霸王茶姬 → 3 楼美食广场；商场 10:00 开门、4 个入口</div>
+<div class="note orange"><b>弹性：</b>Day1 分支 B 未去滑索且想补 → 09:00 先去 Hutan Bandar（10:00–13:00 场）；住 KSL 可顺带逛 KSL City Mall——两选一不贪多</div>
+</div>
+<img class="spot-img" src="assets/images/midvalley.jpg" alt="Mid Valley Southkey 东入口" loading="lazy">
+<p class="imgcap">Mid Valley Southkey 东入口（260+ 家店 · 10:00 开门 · 顶层 GSC）</p>
+<p class="vidline">实景参考：<a href="https://www.iesdouyin.com/share/video/7528653055970020651">抖音·新山三大商圈怎么选（Mid Valley）</a> · <a href="https://www.iesdouyin.com/share/video/7524892731919961378">抖音·JB 商场一日游·Mid Valley 实测</a> · <a href="https://www.iesdouyin.com/share/video/7349994052848209189">抖音·新山最大购物中心总览</a></p>
+<button class="navbtn" data-nav="The Mall Mid Valley Southkey">一键导航</button>
+</div>
+
+<span class="sec-tag">BACKUP</span>
+<h2 class="sec" id="backup">备选方案（B 档触发条件）</h2>
+<p class="sec-desc">弹性兜底：天气、满场、精力不够时怎么改，按受阻情况查表。</p>
+<div class="rulebox"><b>总原则：</b>A 档主线优先。B 档只在「RUD 收工＋状态好（12:30 检查点）／看完电影精力够」时插入；任一 B 档点若导致赶不上 JetSki（15:30/16:00 场）或 18:40 的 4DX，直接放弃。</div>
+<div class="alt-grid">
+<div class="alt"><b>超时压缩顺序</b><p>任何环节超时，按「Hutan 滑索（分支 A）→ R&amp;F 日落 → Mount Austin」逐级砍；再不够，JetSki 改 16:00 兜底场。</p></div>
+<div class="alt"><b>雨天／雷暴兜底</b><p>RUD 户外赛道关闭 → 改 EVOLT 室内卡丁车（Day1 下午）；JetSki 雷暴取消 → 改 Day2 上午补玩或改逛街（雷暴可退款）。</p></div>
+<div class="alt"><b>满场／售罄应对</b><p>4DX 限时特映售罄 → 改同影院普通场次或 21:00 后场次；JetSki 满场 → 优先 15:30 订不到按 16:00。</p></div>
+<div class="alt"><b>精力／天气收缩</b><p>Mount Austin 精力不够 → 直接回酒店（Mid Valley／KSL 周边宵夜）；烟霾严重 → 高空观景（Skyscape）取消，保留室内项目。</p></div>
+</div>
+
+<span class="sec-tag">VIDEOS</span>
+<h2 class="sec" id="videos">玩法视频参考（抖音实测帖）</h2>
+<p class="sec-desc">按点位分组，出发前挑 2–3 条看即可建立实景预期。</p>
+<div class="vid-list"><b>RUD 卡丁车（Medini）</b>
+<ul>
+<li><a href="https://www.iesdouyin.com/share/video/7676101409125649777">JB 卡丁车 EVOLT vs RUD 对比（赛道长度/汽油车/园区实测）</a></li>
+<li><a href="https://www.iesdouyin.com/share/video/7628939691446127333">RUD 第一人称一镜到底（超车/走线实拍）</a></li>
+<li><a href="https://www.iesdouyin.com/share/video/7566698353226471046">00 后下班体验 RUD Medini（vlog 视角）</a></li>
+</ul>
+</div>
+<div class="vid-list"><b>Sea-Doo JetSki（Senibong Cove）</b>
+<ul>
+<li><a href="https://www.iesdouyin.com/share/video/7230795505461185792">新山 JetSki 一人 RM250 含岛上野餐（Senibong 出发实测）</a></li>
+<li><a href="https://www.iesdouyin.com/share/video/7465680493309168950">Senibong 水上摩托 32km＋海鲜餐（4 种配套 RM250 起）</a></li>
+<li><a href="https://www.iesdouyin.com/share/video/7651565980166759759">新山 JetSki 海上自驾推荐（玩法速览）</a></li>
+</ul>
+</div>
+<div class="vid-list"><b>R&amp;F 国际城日落</b>
+<ul>
+<li><a href="https://www.iesdouyin.com/share/video/7578494052263758754">大马看新加坡日落（R&amp;F 机位实测）</a></li>
+<li><a href="https://www.iesdouyin.com/share/video/7437444241040624950">Puteri Harbour 黄昏（同岸线日落参考）</a></li>
+</ul>
+</div>
+<div class="vid-list"><b>GSC 4DX（Mid Valley）</b>
+<ul>
+<li><a href="https://www.iesdouyin.com/share/video/7130538139067731241">4D 观影震动实测（晕动避坑向）</a></li>
+<li><a href="https://www.iesdouyin.com/share/video/7687851178012884147">4DX 生化危机·喷水座椅体验</a></li>
+<li><a href="https://www.iesdouyin.com/share/video/7658718169074240768">4DX Max 影院人气实测（11.8 万赞）</a></li>
+</ul>
+</div>
+<div class="vid-list"><b>Mount Austin 夜宵（B 档）</b>
+<ul>
+<li><a href="https://www.iesdouyin.com/share/video/7377729825743686964">Mount Austin 最火 lok lok（夜宵街实测）</a></li>
+<li><a href="https://www.iesdouyin.com/share/video/7525654030438190374">新山 7 点满桌碌碌（现场人气）</a></li>
+<li><a href="https://www.iesdouyin.com/share/video/7692746344101209960">串哥哥·新山 lok lok 文化</a></li>
+</ul>
+</div>
+<div class="vid-list"><b>Mid Valley 逛街</b>
+<ul>
+<li><a href="https://www.iesdouyin.com/share/video/7528653055970020651">新山三大商圈怎么选（Mid Valley vs KSL vs 城中坊）</a></li>
+<li><a href="https://www.iesdouyin.com/share/video/7524892731919961378">JB 商场一日游·Mid Valley 实测</a></li>
+<li><a href="https://www.iesdouyin.com/share/video/7349994052848209189">新山最大购物中心总览</a></li>
+</ul>
+</div>
+<div class="vid-list"><b>Hutan Bandar 滑索（B 档）</b>
+<ul>
+<li><a href="https://www.iesdouyin.com/share/video/7630745195626541129">Hutan Bandar 滑索体验（Day1 弹性分支 A）</a></li>
+</ul>
+</div>
+
+<span class="sec-tag">VERIFY</span>
+<h2 class="sec" id="verify">信息核验提示（2026-10-14）</h2>
+<p class="sec-desc">出发前 1 天（10-16）逐项复核：天气/烟霾、场次在售、营业状态与价格。</p>
+<div class="card">
+<div class="verify">本页为<b>执行版攻略</b>，不是当日时刻表：以下信息会随季节、政策与商家经营变化，<b>出发前 1 天（10-16）请逐项复核</b>。</div>
+<div class="verify">天气与烟霾：10-17/18 预报局部阵雨 60%；烟霾致新加坡西部 PM2.5 一度达 284 µg/m³——出发前查 PSI 与能见度；JetSki 雷暴才可退款（小雨照常），RUD 户外赛道雨停后以现场开放为准。</div>
+<div class="verify">跨境交通时效：去程 Tuas 口岸 06:00–00:00，周六早车流少 30–40%；返程 Woodlands 24h 开放，周日避开 17:00–21:00 高峰；深夜返程可选 KTM 21:15／22:30 班次（S$5／5min）或跨境 Grab，出关后叫车跨岛预留 30–45min。</div>
+<div class="verify">票价与营业：RUD Stage 2＝RM79/场、4DX RM28–42.5、JetSki 约 RM250/人 起——均为 2026-10-14 核验的公开信息；4DX 限时特映 10-17 最后一场，提前订防满场。</div>
+<div class="verify">餐饮与弹性：Mount Austin 宵夜 20:00–04:00、YOLO 现场演出周六 21:00 起；推荐店可能已关门/迁址/调价，出发前用地图搜店名确认营业。</div>
+<div class="verify">地图坐标：部分点位为估算值，仅用于行程示意，导航以各点「一键导航」为准。</div>
+<div class="verify">视频与实景图：视频为抖音平台公开分享页；实景图来自公开网络，仅作参考，来源见各点标注。</div>
+</div>
+<footer>信息核验：2026-10-14 · 出行前请复核天气/烟霾、场次与营业状态 · 视频与价格以当日平台为准</footer>
+</div>
+
+<div class="navmodal" id="navmodal">
+  <div class="box">
+    <h4>选择导航应用</h4>
+    <button id="nav-gaode">高德地图</button>
+    <button id="nav-baidu">百度地图</button>
+    <button id="nav-apple">Apple 地图</button>
+    <button id="nav-tencent">腾讯地图</button>
+    <div class="close" id="navclose">取消</div>
+  </div>
+</div>
+
+<script src="assets/leaflet.js"></script>
+<script src="assets/map_data.js"></script>
+<script>
+/* ---- 地图：行程点位版（默认离线瓦片，任何网络都能显示；可切换高德/Esri） ---- */
+var map = L.map('map', {scrollWheelZoom:false, minZoom:10, maxZoom:12});
+var BLANK_TILE="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
+var OfflineLayer = L.GridLayer.extend({
+  options:{maxZoom:14, maxNativeZoom:13, noWrap:true},
+  createTile:function(coords){
+    var img = L.DomUtil.create('img','leaflet-tile');
+    img.style.width = img.style.height = '256px';
+    var key = coords.z + '_' + coords.x + '_' + coords.y;
+    if(coords.z > 13){
+      var s = Math.pow(2, coords.z - 13);
+      key = '13_' + Math.floor(coords.x/s) + '_' + Math.floor(coords.y/s);
+    }
+    img.src = (typeof TILE_B64 !== 'undefined' && TILE_B64[key]) || BLANK_TILE;
+    return img;
+  }
+});
+var SOURCES = {
+  offline:{label:'离线地图', fn:function(){ return new OfflineLayer(); }},
+  gaode:{label:'高德', url:'https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=7&x={x}&y={y}&z={z}', opts:{maxZoom:18, subdomains:['1','2','3','4'], attribution:'&copy; 高德地图'}},
+  esri:{label:'Esri 街道', url:'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', opts:{maxZoom:19, attribution:'Esri &copy; OSM'}}
+};
+var ORDER = ['offline','gaode','esri'];
+var curKey = 'offline', errCount = 0, autoTried = false;
+function makeLayer(key){ if(SOURCES[key].fn) return SOURCES[key].fn(); return L.tileLayer(SOURCES[key].url, SOURCES[key].opts); }
+function switchTile(manual){
+  var idx = ORDER.indexOf(curKey);
+  var next = ORDER[(idx + 1) % ORDER.length];
+  if(map.hasLayer(tiles)) map.removeLayer(tiles);
+  tiles = makeLayer(next).addTo(map);
+  curKey = next;
+  if(manual) autoTried = false;
+}
+var tiles = makeLayer('offline').addTo(map);
+tiles.on('tileerror', function(){
+  errCount++;
+  if(!autoTried && errCount >= 8){ autoTried = true; switchTile(false); }
+});
+var tbtn = L.control({position:'topright'});
+tbtn.onAdd = function(){
+  var el = L.DomUtil.create('div','');
+  el.style.cssText = 'background:#fff;border:1px solid #d0d0d0;border-radius:4px;padding:6px 10px;font-size:12px;cursor:pointer;box-shadow:0 1px 5px rgba(0,0,0,.35);color:#263238;';
+  el.innerHTML = '底图';
+  el.title = '切换底图源：离线地图 / 高德 / Esri';
+  el.onclick = function(){ switchTile(true); };
+  return el;
+};
+tbtn.addTo(map);
+var spots = [
+  {n:'A1 RUD 卡丁车', c:[1.405099,103.625672], t:'09:30–11:30', d:'774m/16 弯·油车·两人各 1 场 Stage 2', a:true},
+  {n:'A2 Sea-Doo JetSki', c:[1.4830,103.8030], t:'16:00–16:30', d:'Senibong Cove 出发·横渡柔佛海峡到 R&F', a:true},
+  {n:'A3 R&F 国际城日落', c:[1.4698,103.7818], t:'16:30–17:45', d:'对岸新加坡天际线机位·17:45 前离场', a:true},
+  {n:'已确认 GSC 4DX', c:[1.500973,103.777749], t:'18:40–20:40', d:'Mid Valley 顶层·Street Fighter 限时特映', a:true},
+  {n:'B Mount Austin 夜宵', c:[1.550654,103.786015], t:'看完 4DX 精力够才去', d:'Wei Ge Lok Lok·20:00–04:00·YOLO 演出', a:false},
+  {n:'B Hutan Bandar 滑索', c:[1.483119,103.746553], t:'12:30 检查点后', d:'丛林滑索·周六日两场·非大马成人 RM30', a:false}
+];
+var bounds = L.latLngBounds(spots.map(function(s){ return s.c; }));
+/* 固定视野方案：setView 直接指定中心与缩放级别，不依赖 fitBounds 的容器尺寸计算，
+   彻底避免"视野异常放大→大片区域无瓦片露出背景色"的空白问题；延时重算兜底 */
+function setDefaultView(){
+  if(map._size && (map._size.x < 60 || map._size.y < 60)){ map.invalidateSize(); }
+  var w = map.getSize().x || 1200;
+  var z = w >= 1100 ? 11.5 : (w >= 700 ? 11.4 : 11);
+  map.setView([1.478, 103.714], z);
+}
+setDefaultView();
+setTimeout(setDefaultView, 300);
+setTimeout(setDefaultView, 1200);
+spots.forEach(function(s){
+  var color = s.a ? '#E53935' : '#E57554';
+  var ic = L.divIcon({className:'', html:'<div style="width:13px;height:13px;border-radius:50%;background:'+color+';border:2.5px solid #fff;box-shadow:0 0 0 2px '+color+',0 1px 4px rgba(0,0,0,.3)"></div>', iconSize:[13,13], iconAnchor:[7,7]});
+  L.marker(s.c, {icon:ic}).addTo(map)
+    .bindPopup('<b>'+s.n+'</b><br><span style="color:#5C7A85;font-size:12px">'+s.t+'</span><br>'+s.d);
+});
+var legend = L.control({position:'bottomleft'});
+legend.onAdd = function(){
+  var div = L.DomUtil.create('div','map-legend');
+  div.innerHTML = '<span class="dot a"></span>红＝已确认必去<br><span class="dot b"></span>橙＝时间足够才去';
+  return div;
+};
+legend.addTo(map);
+
+/* ---- 一键导航 ---- */
+var nm=document.getElementById('navmodal');
+var curNav='';
+document.querySelectorAll('.navbtn').forEach(function(b){
+  b.onclick=function(){ curNav=b.dataset.nav; nm.style.display='flex'; };
+});
+document.getElementById('navclose').onclick=function(){ nm.style.display='none'; };
+nm.onclick=function(e){ if(e.target===nm) nm.style.display='none'; };
+var enc=encodeURIComponent;
+document.getElementById('nav-gaode').onclick=function(){ window.open('https://uri.amap.com/search?keyword='+enc(curNav)); nm.style.display='none'; };
+document.getElementById('nav-baidu').onclick=function(){ window.open('https://map.baidu.com/search/'+enc(curNav)); nm.style.display='none'; };
+document.getElementById('nav-apple').onclick=function(){ window.open('http://maps.apple.com/?q='+enc(curNav)); nm.style.display='none'; };
+document.getElementById('nav-tencent').onclick=function(){ window.open('https://apis.map.qq.com/uri/v1/search?keyword='+enc(curNav)); nm.style.display='none'; };
+/* ---- 预订待办勾选（localStorage 记忆） ---- */
+(function(){
+  var KEY='jb_prep_check';
+  var list=document.getElementById('checklist');
+  if(!list) return;
+  var boxes=list.querySelectorAll('input[type=checkbox]');
+  var saved=null;
+  try{ saved=JSON.parse(localStorage.getItem(KEY)||'null'); }catch(e){}
+  boxes.forEach(function(b,i){
+    b.checked = !!(saved && saved[i]);
+    b.parentNode.classList.toggle('done', b.checked);
+    b.addEventListener('change', function(){
+      var arr=[];
+      boxes.forEach(function(x){ arr.push(x.checked); });
+      try{ localStorage.setItem(KEY, JSON.stringify(arr)); }catch(e){}
+      b.parentNode.classList.toggle('done', b.checked);
+    });
+  });
+})();
+</script>
+</body>
+</html>
