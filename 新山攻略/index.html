@@ -66,6 +66,7 @@ li{margin:4px 0}
 .check li label{cursor:pointer;line-height:1.5;flex:1}
 .check li.done{opacity:.55}
 .check li.done label{text-decoration:line-through}
+.packed td{color:#999;text-decoration:line-through}
 .video{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .video a{display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;text-decoration:none;color:var(--deep);font-size:13px}
 .video a:hover{border-color:var(--main)}
@@ -202,25 +203,25 @@ header.hero .sub{font-size:15px;text-shadow:0 1px 6px rgba(6,32,42,.45)}
 <div class="spot-head"><h3>出发前携带清单</h3><span class="timechip">出发前 1 天核对</span></div>
 <details><summary>展开携带清单（必带／建议／可选 3 档 25+ 项）</summary>
 <table>
-<tr><th>档位</th><th>物品</th><th>备注</th></tr>
-<tr><td rowspan="7" style="background:#E8F5E9;font-weight:bold">必带<br><small>缺了寸步难行</small></td><td>护照（有效期 6 个月以上、留 2 页空白）</td><td>出发前检查有效期</td></tr>
-<tr><td>MDAC（截图或打印）＋酒店预订确认（电子版）</td><td>抵马前 3 天填 MDAC，提交后截图</td></tr>
-<tr><td>马币现金 RM250–300 ＋ DBS 卡（信用卡＋借记卡）＋ Grab 绑卡</td><td>CW 巴士无现金刷卡；小摊／夜市现金备用</td></tr>
-<tr><td>充电宝＋充电线 ＋ 马来西亚 eSIM／漫游</td><td>离线地图本页可保存</td></tr>
-<tr><td>运动鞋（卡丁车／滑索）</td><td>户外项目必备</td></tr>
-<tr><td>换洗衣物＋速干毛巾</td><td>JetSki 会湿身</td></tr>
-<tr><td>防水袋（JetSki 放手机／证件）＋ 防晒 ＋ 雨具</td><td>10 月阵雨多</td></tr>
-<tr><td rowspan="6" style="background:#FFF8E1;font-weight:bold">建议<br><small>体验加分·突发兜底</small></td><td>手机防水袋</td><td>JetSki 出海拍照</td></tr>
-<tr><td>肠胃药＋退烧药＋晕车药</td><td>本地美食／温差／巴士</td></tr>
-<tr><td>驱蚊液</td><td>公园／宵夜户外</td></tr>
-<tr><td>护照电子备份（手机存扫描件）</td><td>证件丢失应急</td></tr>
-<tr><td>便携纸巾／湿巾</td><td>户外／过关</td></tr>
-<tr><td>创可贴</td><td>小擦伤</td></tr>
-<tr><td rowspan="5" style="background:#ECEFF1;font-weight:bold">可选<br><small>按需携带</small></td><td>墨镜、帽子</td><td>防晒／拍照</td></tr>
-<tr><td>U 型枕</td><td>巴士小憩</td></tr>
-<tr><td>拖鞋</td><td>酒店用</td></tr>
-<tr><td>零食＋水</td><td>巴士／过关排队</td></tr>
-<tr><td>塑料袋</td><td>装湿衣／垃圾</td></tr>
+<tr><th>档位</th><th>物品</th><th>备注</th><th>✓</th></tr>
+<tr><td rowspan="7" style="background:#E8F5E9;font-weight:bold">必带<br><small>缺了寸步难行</small></td><td>护照（有效期 6 个月以上、留 2 页空白）</td><td>出发前检查有效期</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
+<tr><td>MDAC（截图或打印）＋酒店预订确认（电子版）</td><td>抵马前 3 天填 MDAC，提交后截图</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
+<tr><td>马币现金 RM250–300 ＋ DBS 卡（信用卡＋借记卡）＋ Grab 绑卡</td><td>CW 巴士无现金刷卡；小摊／夜市现金备用</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
+<tr><td>充电宝＋充电线 ＋ 马来西亚 eSIM／漫游</td><td>离线地图本页可保存</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
+<tr><td>运动鞋（卡丁车／滑索）</td><td>户外项目必备</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
+<tr><td>换洗衣物＋速干毛巾</td><td>JetSki 会湿身</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
+<tr><td>防水袋（JetSki 放手机／证件）＋ 防晒 ＋ 雨具</td><td>10 月阵雨多</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
+<tr><td rowspan="6" style="background:#FFF8E1;font-weight:bold">建议<br><small>体验加分·突发兜底</small></td><td>手机防水袋</td><td>JetSki 出海拍照</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
+<tr><td>肠胃药＋退烧药＋晕车药</td><td>本地美食／温差／巴士</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
+<tr><td>驱蚊液</td><td>公园／宵夜户外</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
+<tr><td>护照电子备份（手机存扫描件）</td><td>证件丢失应急</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
+<tr><td>便携纸巾／湿巾</td><td>户外／过关</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
+<tr><td>创可贴</td><td>小擦伤</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
+<tr><td rowspan="5" style="background:#ECEFF1;font-weight:bold">可选<br><small>按需携带</small></td><td>墨镜、帽子</td><td>防晒／拍照</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
+<tr><td>U 型枕</td><td>巴士小憩</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
+<tr><td>拖鞋</td><td>酒店用</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
+<tr><td>零食＋水</td><td>巴士／过关排队</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
+<tr><td>塑料袋</td><td>装湿衣／垃圾</td><td style="text-align:center"><input type="checkbox" class="packbox" title="打包后勾选"></td></tr>
 </table>
 </details>
 </div>
@@ -701,22 +702,21 @@ document.getElementById('nav-gaode').onclick=function(){ window.open('https://ur
 document.getElementById('nav-baidu').onclick=function(){ window.open('https://map.baidu.com/search/'+enc(curNav)); nm.style.display='none'; };
 document.getElementById('nav-apple').onclick=function(){ window.open('http://maps.apple.com/?q='+enc(curNav)); nm.style.display='none'; };
 document.getElementById('nav-tencent').onclick=function(){ window.open('https://apis.map.qq.com/uri/v1/search?keyword='+enc(curNav)); nm.style.display='none'; };
-/* ---- 预订待办勾选（localStorage 记忆） ---- */
+/* ---- 携带清单勾选（localStorage 记忆） ---- */
 (function(){
-  var KEY='jb_prep_check';
-  var list=document.getElementById('checklist');
-  if(!list) return;
-  var boxes=list.querySelectorAll('input[type=checkbox]');
+  var KEY='jb_pack_check';
+  var boxes=document.querySelectorAll('.packbox');
+  if(!boxes.length) return;
   var saved=null;
   try{ saved=JSON.parse(localStorage.getItem(KEY)||'null'); }catch(e){}
   boxes.forEach(function(b,i){
     b.checked = !!(saved && saved[i]);
-    b.parentNode.classList.toggle('done', b.checked);
+    if(b.closest('tr')) b.closest('tr').classList.toggle('packed', b.checked);
     b.addEventListener('change', function(){
       var arr=[];
       boxes.forEach(function(x){ arr.push(x.checked); });
       try{ localStorage.setItem(KEY, JSON.stringify(arr)); }catch(e){}
-      b.parentNode.classList.toggle('done', b.checked);
+      if(b.closest('tr')) b.closest('tr').classList.toggle('packed', b.checked);
     });
   });
 })();
